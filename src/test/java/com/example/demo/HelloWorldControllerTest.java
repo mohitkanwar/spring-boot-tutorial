@@ -30,8 +30,14 @@ public class HelloWorldControllerTest {
     }
 
     @Test
-    public void getDataTest() {
+    public void simpleHelloWorldTest() {
         get("/api/tdd/helloworld").then().assertThat().body("data", equalTo("Hello World!"));
+    }
+
+    @Test
+    public void parameterizedHelloParam() {
+        String name = "someRandomName";
+        get("/api/tdd/helloworld?name="+name).then().assertThat().body("data", equalTo("Hello "+name+"!"));
     }
 
 }
