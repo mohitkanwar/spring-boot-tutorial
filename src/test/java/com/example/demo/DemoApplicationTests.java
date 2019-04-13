@@ -11,6 +11,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		//DemoApplication.main(new String[0]);
 	}
 
 }
