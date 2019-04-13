@@ -40,4 +40,16 @@ public class HelloWorldControllerTest {
         get("/api/tdd/helloworld?name="+name).then().assertThat().body("data", equalTo("Hello "+name+"!"));
     }
 
+    @Test
+    public void pathParamHelloWorldEnglishLocale() {
+
+        get("/api/tdd/en_US/helloworld").then().assertThat().body("data", equalTo("Hello World!"));
+    }
+
+    @Test
+    public void pathParamHelloWorldHindiLocale() {
+
+        get("/api/tdd/hi_IN/helloworld").then().assertThat().body("data", equalTo("नमस्ते दुनिया!"));
+    }
+
 }
