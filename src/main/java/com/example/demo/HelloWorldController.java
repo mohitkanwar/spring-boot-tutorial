@@ -2,19 +2,18 @@ package com.example.demo;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/mycontroller")
 public class HelloWorldController {
 
-    @RequestMapping(path = "/defaultpage" ,method = RequestMethod.GET)
+    //http://localhost:8080/mycontroller/english/defaultpage?name=Dunia
+    @RequestMapping(path = "/{locale}/defaultpage" ,method = RequestMethod.GET)
     //@ResponseBody
-    public String getDefaultPage(){
-        return "hello";
+    public String getDefaultPage(@RequestParam(name = "name",required = false, defaultValue = "World") String name,
+                                 @PathVariable(name = "locale") String locale){
+        return "hello " +name+". The chosen locale is "+locale;
     }
 
 }
