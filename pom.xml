@@ -30,6 +30,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
 		<!--This dependency allows setting up Spring Context before executing the tests.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
