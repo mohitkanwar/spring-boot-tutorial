@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
@@ -13,7 +13,7 @@
 
 <h2> Making it read the html file from templates/ folder with name hello.html.</h2>
 
-
-
+<h2>The Attribute has a value of :</h2><br/>
+<h2 th:text="${attribute}" style="color: red">1</h2>
 </body>
 </html>
