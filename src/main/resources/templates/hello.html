@@ -15,5 +15,9 @@
 
 <h2>The Attribute has a value of :</h2><br/>
 <h2 th:text="${attribute}" style="color: red">1</h2>
+
+<ul>
+    <li th:each="message : ${messages}" th:text="${message}"></li>
+</ul>
 </body>
 </html>
