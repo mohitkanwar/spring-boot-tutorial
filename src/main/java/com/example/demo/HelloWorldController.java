@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -23,9 +24,10 @@ public class HelloWorldController {
     }
 
     @RequestMapping(path = "/specialpage" ,method = RequestMethod.GET)
-    public ModelAndView getSpecailPage(){
+    public ModelAndView getSpecailPage(@RequestParam(name = "message", required = false)String message){
         ModelAndView modelAndView = new ModelAndView("special");
-        modelAndView.addObject("attribute","The Value of the attribute passed from ModelAndView");
+        message = message==null?"The Value of the attribute passed from ModelAndView":message;
+        modelAndView.addObject("attribute",message);
         return modelAndView;
     }
 
